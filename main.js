@@ -32,12 +32,12 @@ LabelpointImg.prototype.addPixel = function (pixel) {
 
 // make sure the last byte of the current line will be written correctly, even if the byte was not full (width / 8 = float)
 LabelpointImg.prototype.nextLine = function () {
+	this.wCount = 0;
 	if (this.bitcount > 0) {
 		this.lastbyte <<= (8 - this.bitcount)  // shift the rest of the byte with zeros
 		if (this.bufferPos < this.bufferSize) this.bmpBuffer.writeUInt8(this.lastbyte,this.bufferPos++); //  write the byte  
 		this.lastbyte = 0;
 		this.bitcount = 0;
-		this.wCount = 0;
 	}
 }
 
@@ -77,5 +77,5 @@ Printer.prototype.print = function(data) {
 
 };
 
-module.exports = LabelpointImg;
-module.exports = Printer;
+module.exports.LabelpointImg = LabelpointImg;
+module.exports.Printer = Printer;

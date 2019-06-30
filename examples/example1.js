@@ -3,7 +3,7 @@ const {LabelpointImg, Printer} = require('..'); // only used for this example in
 //const {LabelpointImg, Printer} = require('labelpoint-graphics-format');
 
 // create a new Labelpoint image with a width of 80 dots an a height of 50 dot
-lpImg = new	LabelpointImg(80,50);
+lpImg = new LabelpointImg(80,50);
 
 // iterate over the image to set each dot
 // for this example all dots will be set to 1 = black (use 0 instead for no dot = white)

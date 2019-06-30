@@ -1,5 +1,5 @@
 const fs = require('fs');
-const {LabelpointImg, Printer} = require('..'); // only used for this example in subfolde of the package, otherwise use next line instead!
+const {LabelpointImg, Printer} = require('..'); // only used for this example in subfolder of the package, otherwise use next line instead!
 //const {LabelpointImg, Printer} = require('labelpoint-graphics-format');
 
 // create a new Labelpoint image with a width of 80 dots an a height of 50 dot

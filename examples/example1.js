@@ -55,7 +55,7 @@ printjob.push(rbrInit);
 printjob.push(lpImg.getBuffer());
 printjob.push(Buffer.from(printNow));
 
-// generate a compete printjob buffer out of the parts
+// generate a complete printjob buffer out of the parts
 let printjobBuf = Buffer.concat(printjob);
 
 //console.log("Created Printbuffer as Hex View:\n",printjobBuf.toString('hex').match(/../g).join(' '));

@@ -1,0 +1,38 @@
+{
+  "name": "labelpoint-graphics-format",
+  "version": "0.0.1",
+  "description": "Node.js Implementation of the Labelpoint Graphics Format. It allows to build a graphic, pixel by pixel, used by barcodeprinters which speak the Labelpoint printer language. (Some label printers from IMAJE, Markpoint, Honeywell speak this language.) It can be used to convert pictures into this format.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxlux/Labelpoint-Graphics-Format.git"
+  },
+  "keywords": [
+    "Graphics",
+    "Format",
+    "Label",
+    "Printer",
+    "IMAJE",
+    "MARKPOINT",
+    "Datamax",
+    "Honeywell",
+    "MP",
+    "Compact4",
+    "MKII",
+    "Barcode",
+    "Graphix",
+    "Convert",
+    "Image",
+    "converter",
+    "conversion"
+  ],
+  "author": "luxlux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luxlux/Labelpoint-Graphics-Format/issues"
+  },
+  "homepage": "https://github.com/luxlux/Labelpoint-Graphics-Format#readme"
+}

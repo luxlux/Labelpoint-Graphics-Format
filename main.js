@@ -6,22 +6,22 @@ function LabelpointImg (width, height) {
 	this.bufferSize = (Math.ceil(this.width/8) * this.height) + 10;
 	this.bmpBuffer = Buffer.alloc(this.bufferSize);
 	this.bmpBuffer.writeUInt16BE(0x0A00,0); //  predefined startcode for labelpoint Images 
-	this.bmpBuffer.writeUInt16LE(this.height,2); //  height in pixels:  (Little Endian)
-	this.bmpBuffer.writeUInt16LE(this.width,4); //  width in pixels:   (Little Endian)
+	this.bmpBuffer.writeUInt16LE(this.height,2); //  height in dots:  (Little Endian)
+	this.bmpBuffer.writeUInt16LE(this.width,4); //  width in dots:   (Little Endian)
 	this.bmpBuffer.writeUInt16BE(0x0000,6); //  predifined
 	this.bmpBuffer.writeUInt16LE(Math.ceil(width/8),8); // Number of full bytes per image row: (Little Endian)
-	this.bufferPos = 10;  //the first 10 bytes a the image header, pixeldata starts at the 11. byte
+	this.bufferPos = 10;  //the first 10 bytes a the image header, dots or pixeldata starts at the 11. byte
 	this.lastbyte = 0; // the byte which will be composed at the moment 
 	this.bitcount = 0; // number of bits added to this bit up to now
-	this.wCount = 0; // keep track of the x position of the current pixel
+	this.wCount = 0; // keep track of the x position of the current dot
 }
 
 // Arg  pixel: 0 (white) or 1 (black)
 LabelpointImg.prototype.addPixel = function (pixel) {
-	if (this.wCount++ >= this.width) return; // ignore pixels outside the pic width 
+	if (this.wCount++ >= this.width) return; // ignore dots/pixels outside the pic width 
 	if (this.bitcount++ < 8) {
 		this.lastbyte <<= 1; // push the bits to the left
-		this.lastbyte += pixel; // add the new pixel as bit
+		this.lastbyte += pixel; // add the new dot as bit
 		if (this.bitcount == 8) { // write the byte if 8 bits were set
 				if (this.bufferPos < this.bufferSize) this.bmpBuffer.writeUInt8(this.lastbyte,this.bufferPos++); //  Image Data
 				this.lastbyte = 0;

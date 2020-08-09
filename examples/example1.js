@@ -61,7 +61,7 @@ let printjobBuf = Buffer.concat(printjob);
 //console.log("Created Printbuffer as Hex View:\n",printjobBuf.toString('hex').match(/../g).join(' '));
 //console.log("\nCreated Printbuffer as UTF8 View:\n",printjobBuf.toString('utf8'));
 
-// Create a printer from a name which exists as cups printer on your system
+// Create a printer from a printer name which still exists as cups raw printer on your system
 var printer = new Printer('MP4');
 
 // send the printjob to this printer
